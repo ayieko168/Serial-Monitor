@@ -25,6 +25,7 @@ class Application(QMainWindow):
         self.MainUi.baudRatesCombo.addItems(self._BAUDRATES)
         self.MainUi.comPortsCombo.addItems(self._ComPorts)
         self.MainUi.baudRatesCombo.setCurrentIndex(16)
+        self.MainUi.statusBar.showMessage("Hello", 5000)
         ### Variabled
         self.AutoScroll = True
         self.TimeStamp = False

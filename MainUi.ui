@@ -55,6 +55,9 @@
           <height>31</height>
          </size>
         </property>
+        <property name="toolTip">
+         <string/>
+        </property>
         <property name="text">
          <string>Send</string>
         </property>
@@ -251,7 +254,7 @@
          </size>
         </property>
         <property name="statusTip">
-         <string>Choose Yje</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -346,6 +349,9 @@
           <height>20</height>
          </size>
         </property>
+        <property name="toolTip">
+         <string/>
+        </property>
         <property name="text">
          <string>Clear Output</string>
         </property>
@@ -361,6 +367,9 @@
           <width>25</width>
           <height>20</height>
          </size>
+        </property>
+        <property name="toolTip">
+         <string>Reset Com Port List</string>
         </property>
         <property name="text">
          <string>*R</string>

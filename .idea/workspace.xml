@@ -13,8 +13,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="177" column="12" selection-start-line="177" selection-start-column="12" selection-end-line="177" selection-end-column="12" />
+            <state relative-caret-position="-324">
+              <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
                 <element signature="e#181#543#0" />
@@ -25,9 +25,11 @@
                 <element signature="e#3388#3547#0" />
                 <element signature="e#2675#2747#0" />
                 <element signature="e#2985#3073#0" />
+                <element signature="e#3997#4255#0" />
                 <element signature="e#2760#2838#0" />
                 <element signature="e#3495#3659#0" />
                 <element signature="e#3611#3689#0" />
+                <element signature="e#4377#5126#0" />
               </folding>
             </state>
           </provider>
@@ -57,7 +59,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../Arduino-Oscilloscope-1-Channel/src/BackEnd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="1062">
               <caret line="74" column="56" lean-forward="true" selection-start-line="73" selection-start-column="8" selection-end-line="74" selection-end-column="56" />
             </state>
           </provider>
@@ -182,7 +184,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32949308" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32949308" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.27073732" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -212,15 +214,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../Arduino-Oscilloscope-1-Channel/src/BackEnd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="1062">
           <caret line="74" column="56" lean-forward="true" selection-start-line="73" selection-start-column="8" selection-end-line="74" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="177" column="12" selection-start-line="177" selection-start-column="12" selection-end-line="177" selection-end-column="12" />
+        <state relative-caret-position="-324">
+          <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
             <element signature="e#181#543#0" />
@@ -231,9 +233,11 @@
             <element signature="e#3388#3547#0" />
             <element signature="e#2675#2747#0" />
             <element signature="e#2985#3073#0" />
+            <element signature="e#3997#4255#0" />
             <element signature="e#2760#2838#0" />
             <element signature="e#3495#3659#0" />
             <element signature="e#3611#3689#0" />
+            <element signature="e#4377#5126#0" />
           </folding>
         </state>
       </provider>
