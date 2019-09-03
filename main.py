@@ -179,7 +179,6 @@ class Application(QMainWindow):
             data = data.decode("utf-8", errors='replace')
             # data = data.decode("utf-8", errors='ignore')
 
-
             ## Autoscroll or Not
             if self.AutoScroll:
                 self.MainUi.plainTextEdit.moveCursor(QTextCursor.End)
