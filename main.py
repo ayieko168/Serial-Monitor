@@ -24,9 +24,11 @@ class Application(QMainWindow):
         ### Inits
         self.MainUi.baudRatesCombo.addItems(self._BAUDRATES)
         self.MainUi.comPortsCombo.addItems(self._ComPorts)
+        self.MainUi.baudRatesCombo.setCurrentIndex(16)
         ### Variabled
         self.AutoScroll = True
         self.TimeStamp = False
+        self.Format = b"\r\n"
 
 
         ########## Main Connections to Functions
@@ -47,14 +49,13 @@ class Application(QMainWindow):
         self.ser = serial.Serial(timeout=1)
 
         ######### Default Values
-        self.baudRate = self.MainUi.baudRatesCombo.currentText()
+        self.baudRate = str(self.MainUi.baudRatesCombo.currentText()).replace(",", "")
         self.comPort = self.MainUi.comPortsCombo.currentText()
 
         ########## Setup Loop Timer
         self.timer = QtCore.QTimer()
+        # self.timer.connect(self.read)
         self.timer.timeout.connect(self.read)
-
-
 
 
     def sendButtonCMD(self):
@@ -130,7 +131,18 @@ class Application(QMainWindow):
 
     def outputFormatingComboCMD(self):
 
-        print("formating")
+        val = self.MainUi.outputFormatingCombo.currentText()
+        if val == "Both NL & CR":
+            self.Format = b"\r\n"
+
+        elif val == "No Line Ending":
+            self.Format = b""
+
+        elif val == "Newline":
+            self.Format = b"\n"
+
+        elif val == "Carriage Return":
+            self.Format = b"\n"
 
 
     def resetComPortsButtonCMD(self):
@@ -161,18 +173,23 @@ class Application(QMainWindow):
 
         if self.ser.in_waiting > 0:
 
-            data = self.ser.read_until(b"\r\n")
-            # data = self.ser.read(self.ser.in_waiting)
-            # data = self.ser.read_until()
-            # print(data)
-            # print(type(data))
+            ## Read data from serial
+            data = self.ser.read_until(self.Format)
             data = data.decode("utf-8", errors='replace')
+            # data = data.decode("utf-8", errors='ignore')
 
-            ## Append Data To Text
-            self.MainUi.plainTextEdit.insertPlainText(data)
+
             ## Autoscroll or Not
             if self.AutoScroll:
                 self.MainUi.plainTextEdit.moveCursor(QTextCursor.End)
+            ## Timestamp On or Off
+            if self.TimeStamp:
+                ts = time.time()
+                t = time.strftime("[%H:%M:%S] ", time.gmtime(ts))
+                self.MainUi.plainTextEdit.insertPlainText(t)
+            ## Append Data To Text
+            self.MainUi.plainTextEdit.insertPlainText(data)
+
 
 
 
