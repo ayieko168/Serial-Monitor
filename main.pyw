@@ -66,16 +66,17 @@ class Application(QMainWindow):
 
         if self.ser.is_open:
             self.ser.write(bytes(self.entryVal, "utf-8"))
-            print("command = ", bytes(self.entryVal, "utf-8"))
+            self.MainUi.statusBar.showMessage("command = {}".format(bytes(self.entryVal, "utf-8")), 2000)
+
 
         else:
-            print("Port Closed")
+            self.MainUi.statusBar.showMessage("Port Closed", 2000)
 
 
     def connectButtonCMD(self):
 
         if self.MainUi.connectButton.isChecked():
-            print("connect")
+            self.MainUi.statusBar.showMessage("connect", 2000)
 
             self.ser.baudrate = self.baudRate
             self.ser.port = self.comPort
@@ -86,7 +87,8 @@ class Application(QMainWindow):
             self.MainUi.connectButton.setText("DISCONNECT")
             self.MainUi.resetComPortsButton.setDisabled(True)
         else:
-            print("disconect")
+            # print("disconect")
+            self.MainUi.statusBar.showMessage("disconect", 2000)
 
             self._disconnect()
 
@@ -95,7 +97,8 @@ class Application(QMainWindow):
 
     def clearOutputButtonCMD(self):
 
-        print("clear")
+        # print("clear")
+        self.MainUi.statusBar.showMessage("clear", 2000)
 
         self.MainUi.plainTextEdit.clear()
 
@@ -103,31 +106,37 @@ class Application(QMainWindow):
     def autoScrollCheckCMD(self):
 
         if self.MainUi.autoScrollCheck.isChecked():
+            self.MainUi.statusBar.showMessage("AutoScroll on", 2000)
             self.AutoScroll = True
         else:
+            self.MainUi.statusBar.showMessage("AutoScroll off", 2000)
             self.AutoScroll = False
 
 
     def showTimeStampCheckCMD(self):
 
         if self.MainUi.showTimeStampCheck.isChecked():
-            print("Time stamp on")
+            # print("Time stamp on")
+            self.MainUi.statusBar.showMessage("Time stamp on", 2000)
             self.TimeStamp = True
         else:
-            print("Time stamp off")
+            # print("Time stamp off")
+            self.MainUi.statusBar.showMessage("Time stamp off", 2000)
             self.TimeStamp = False
 
 
     def baudRatesComboCMD(self):
 
         self.baudRate = str(self.MainUi.baudRatesCombo.currentText()).replace(",", "")
-        print(self.baudRate)
+        self.MainUi.statusBar.showMessage("Baud Rate = {:,}".format(int(self.baudRate)), 2000)
+        # print(self.baudRate)
 
 
     def comPortsComboCMD(self):
 
         self.comPort = str(self.MainUi.comPortsCombo.currentText())
-        print(self.comPort)
+        self.MainUi.statusBar.showMessage("Com Port = {}".format(self.comPort), 2000)
+        # print(self.comPort)
 
 
     def outputFormatingComboCMD(self):
@@ -158,7 +167,8 @@ class Application(QMainWindow):
         self.timer.start(0)
 
 
-        print(self.ser)
+        # print(self.ser)
+        self.MainUi.statusBar.showMessage("Serial Port Data = {}".format(self.ser), 2000)
 
 
     def _disconnect(self):
@@ -167,7 +177,8 @@ class Application(QMainWindow):
         self.timer.stop()
 
         if not self.ser.is_open:
-            print("Port Closed")
+            self.MainUi.statusBar.showMessage("Port Closed", 2000)
+            # print("Port Closed")
 
 
     def read(self):
@@ -189,41 +200,6 @@ class Application(QMainWindow):
                 self.MainUi.plainTextEdit.insertPlainText(t)
             ## Append Data To Text
             self.MainUi.plainTextEdit.insertPlainText(data)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

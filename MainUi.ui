@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>Serial Monitor</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.png</normaloff>icon.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -436,6 +440,10 @@
    </property>
   </widget>
   <action name="actionCommaFormated">
+   <property name="icon">
+    <iconset>
+     <normaloff>icon.png</normaloff>icon.png</iconset>
+   </property>
    <property name="text">
     <string>Comma formated</string>
    </property>
