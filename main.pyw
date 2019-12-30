@@ -1,5 +1,5 @@
-from PyQt4.QtGui import *
-from PyQt4 import QtCore
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
 from MainUi import *
 import serialPorts
 
@@ -192,7 +192,7 @@ class Application(QMainWindow):
 
             ## Autoscroll or Not
             if self.AutoScroll:
-                self.MainUi.plainTextEdit.moveCursor(QTextCursor.End)
+                self.MainUi.plainTextEdit.moveCursor(QtGui.QTextCursor.End)
             ## Timestamp On or Off
             if self.TimeStamp:
                 ts = time.time()
@@ -200,11 +200,6 @@ class Application(QMainWindow):
                 self.MainUi.plainTextEdit.insertPlainText(t)
             ## Append Data To Text
             self.MainUi.plainTextEdit.insertPlainText(data)
-
-
-
-
-
 
 
 if __name__ == "__main__":
